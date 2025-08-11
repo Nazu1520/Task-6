@@ -1,0 +1,6 @@
+class Circle {
+    double radius;
+    Circle() { radius = 1.0; }
+    Circle(double r) { radius = r; }
+    double getCircumference() { return 2 * 3.1416 * radius; }
+}
