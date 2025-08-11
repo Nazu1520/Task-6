@@ -1,0 +1,42 @@
+ 
+class Account {
+    int id;
+    String name;
+    int balance;
+    Account(int id, String name, int balance) {
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
+    }
+    void deposit(int amount) { balance += amount; }
+    void withdraw(int amount) {
+        if (amount <= balance) balance -= amount;
+        else System.out.println("Insufficient balance!");
+    }
+    int getBalance() { return balance; }
+}
+ 
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person("Hayizan", 23);
+        System.out.println("Person Name: " + p.getName());
+        System.out.println("Person Age: " + p.getAge());
+ 
+        Employee e = new Employee(101, "Hayizan", "Z", 50000);
+        System.out.println("Employee Full Name: " + e.getName());
+        System.out.println("Annual Salary: " + e.getAnnualSalary());
+        e.raiseSalary(10);
+        System.out.println("Salary after raise: " + e.salary);
+        System.out.println(e);
+ 
+        Circle c1 = new Circle();
+        Circle c2 = new Circle(7);
+        System.out.println("Circumference (default): " + c1.getCircumference());
+        System.out.println("Circumference (radius 7): " + c2.getCircumference());
+ 
+        Account acc = new Account(1001, "Hayizan", 10000);
+        acc.deposit(5000);
+        acc.withdraw(3000);
+        System.out.println("Final Balance: " + acc.getBalance());
+    }
+}
